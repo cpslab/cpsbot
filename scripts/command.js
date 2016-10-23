@@ -13,6 +13,9 @@ module.exports = robot => {
 	robot.brain.autoSave = true;
 
 	robot.hear(/.+/, msg => {
+		if (msg.user.name === 'cpsbot') {
+			return;
+		}
 		const obj = robot.brain.get(NAME) || {};
 		const text = msg.message.text;
 		if (obj[text]) {
