@@ -3,8 +3,8 @@
 // Commands:
 //   goroku add <message> - 語録を追加
 //   goroku del <message> - 語録を削除
-//   goroku random <message> - 語録を追加
-//   goroku list <message> - 語録を追加
+//   goroku random <message> - 語録をランダム表示
+//   goroku list <message> - 語録一覧
 
 'use strict';
 
