@@ -33,6 +33,6 @@ module.exports = robot => {
 
 	robot.hear(/^goroku list$/i, msg => {
 		const logger = robot.brain.get('goroku') || [];
-		msg.send(`:iwi: \n${logger.join('\n')}`);
+		msg.send(`${logger.map(v => `:iwi: ${v}`).join('\n')}`);
 	});
 };
