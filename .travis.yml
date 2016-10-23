@@ -1,3 +1,10 @@
 language: node_js
 node_js:
-  - '6'
+- '6'
+deploy:
+  provider: heroku
+  api_key:
+    secure: ZcmwN1VGuqTk+uBji3nB0werZqiFdko/Jdnv/ye2ZxL6FyLaCOjCKvjred3PY0gNKW206M4rkvtJl2j7MHVLZWrVCwlgx6u63a9D3/43eHyT3h9fkUHlIwQsjRY7aa/nh9ctdXRTgy8BQiie+Hvjgywbx/j+gR1ov+7QhSRtiAjo5CCR/fysO7o1TOPvydkDW6MUNxi99u/Hv9ttwHzDDtLxi1zwfChDoi2ZvMaVcaosvOjNGE9n6820pft4j8Dx8uPu+w0Kv1nEjuq4jhrle3ujQlvPAqtpILYnBhfVkVVcOq5cHD8SXLN7hPjDARUdqT2NOTQ5yXHwN3nzgTloyH4ZysNSL5a/gkb3KWcJWe0HbyYwDFQRXwVUpUe/n1q2nKwuK1aYWTSrdB0DcdB0SZVw4sITux+OPj4gb6tvUGpqlJuU2llBMtmPNDp52PvlHHZ+5nJA3fcug8iK/xpW4MQCSVEP8JuaYuruW3NW/YuIp024A5/Xv4qDUSFIfhOLTVfXqitYDu0S/XjxI73k1dRPTEIQChTAZoDoPpvwe86mY5rdm4GtOIL0LN8TW7fWNABBQyw/pxnds4ufLtWJXxYnMb0MQahZAg2fDNWn6KGUT1d833Ca00TIxQ+8VSxBS5X4nbGuqucjCOflExaWgWYdFgNToi70sovuvOBB1HA=
+  app: cpslab-bot
+  on:
+    repo: cpslab/cpsbot
