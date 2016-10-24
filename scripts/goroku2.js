@@ -2,9 +2,10 @@
 //   ユーザ語録
 // Commands:
 //   goroku2 add <name> <message> - 語録を追加
-//   goroku2 rm <name> <message> - 語録を削除
-//   goroku2 random <name> <message> - 語録をランダム表示
-//   goroku2 list <name> <message> - 語録一覧
+//   goroku2 rm <name> <message>  - 語録を削除
+//   goroku2 random <name>        - 語録をランダム表示
+//   goroku2 list <name>          - 語録一覧
+//   goroku2 list-all             - 全ユーザ語録一覧
 
 'use strict';
 
