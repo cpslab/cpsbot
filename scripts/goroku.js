@@ -16,7 +16,7 @@ module.exports = robot => {
 		const m = msg.match[1];
 		logger.push(m);
 		robot.brain.set('goroku', logger);
-		robot.send(`:iwi: ${m}`);
+		msg.send(`:iwi: ${m}`);
 	});
 
 	robot.hear(/^goroku rm (.+)$/, msg => {
