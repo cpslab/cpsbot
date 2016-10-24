@@ -5,6 +5,7 @@
 const url = require('url');
 const got = require('got');
 const cheerio = require('cheerio');
+
 const BASE = 'http://mahouka.jp/special/s07.html';
 
 module.exports = robot => {
