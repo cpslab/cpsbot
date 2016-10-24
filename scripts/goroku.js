@@ -2,7 +2,7 @@
 //   語録
 // Commands:
 //   goroku add <message> - 語録を追加
-//   goroku del <message> - 語録を削除
+//   goroku rm <message> - 語録を削除
 //   goroku random <message> - 語録をランダム表示
 //   goroku list <message> - 語録一覧
 
@@ -19,7 +19,7 @@ module.exports = robot => {
 		robot.send(`:iwi: ${m}`);
 	});
 
-	robot.hear(/^goroku del (.+)$/, msg => {
+	robot.hear(/^goroku rm (.+)$/, msg => {
 		const logger = robot.brain.get('goroku') || [];
 		const nextLogger = logger.filter(mes => mes !== msg.match[1]);
 		robot.brain.set('goroku', nextLogger);
