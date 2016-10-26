@@ -9,5 +9,8 @@ require('heroku-self-ping')(herokuUrl);
 module.exports = robot => {
 	const chanel = 'test';
 	const msg = 'そして次の残留が始まるのです';
-	robot.send(chanel, msg);
+
+	robot.on('commit', commit => {
+		robot.send(chanel, msg);
+	});
 };
