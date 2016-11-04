@@ -346,7 +346,7 @@ code-point-at@^1.0.0:
   dependencies:
     number-is-nan "^1.0.0"
 
-coffee-script@1.6.3:
+coffee-script@~1.6, coffee-script@1.6.3:
   version "1.6.3"
   resolved "https://registry.yarnpkg.com/coffee-script/-/coffee-script-1.6.3.tgz#6355d32cf1b04cdff6b484e5e711782b2f0c39be"
 
@@ -1335,6 +1335,14 @@ https-proxy-agent@^1.0.0:
     debug "2"
     extend "3"
 
+hubot-github-repo-event-notifier:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/hubot-github-repo-event-notifier/-/hubot-github-repo-event-notifier-1.6.0.tgz#8b3a5196459721f8567244cdb1b463343cbc0134"
+  dependencies:
+    coffee-script "~1.6"
+    querystring "~0.2.0"
+    url "~0.7.9"
+
 hubot-help@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/hubot-help/-/hubot-help-0.2.0.tgz#375b0fd7a1eafb2a71cf2e548bcb226bf7e66642"
@@ -2163,6 +2171,10 @@ pseudomap@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
 
+"punycode@>=1.0.0 <1.1.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.0.0.tgz#ce9e6c6e9c1db5827174fceb12ff4938700a1bd3"
+
 qs@~2.2.4:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/qs/-/qs-2.2.5.tgz#1088abaf9dcc0ae5ae45b709e6c6b5888b23923c"
@@ -2174,6 +2186,14 @@ qs@~6.2.0:
 qs@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-4.0.0.tgz#c31d9b74ec27df75e543a86c78728ed8d4623607"
+
+"querystring@>=0.1.0 <0.2.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.1.0.tgz#cb76a26cda0a10a94163fcdb3e132827f04b7b10"
+
+querystring@~0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
 
 random-bytes@~1.0.0:
   version "1.0.0"
@@ -2742,6 +2762,13 @@ url-parse-lax@^1.0.0:
   resolved "https://registry.yarnpkg.com/url-parse-lax/-/url-parse-lax-1.0.0.tgz#7af8f303645e9bd79a272e7a14ac68bc0609da73"
   dependencies:
     prepend-http "^1.0.1"
+
+url@~0.7.9:
+  version "0.7.9"
+  resolved "https://registry.yarnpkg.com/url/-/url-0.7.9.tgz#1959b1a8b361fc017b59513a7c7fa9827f5e4ed0"
+  dependencies:
+    punycode ">=1.0.0 <1.1.0"
+    querystring ">=0.1.0 <0.2.0"
 
 user-home@^2.0.0:
   version "2.0.0"
