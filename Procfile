@@ -1,1 +1,1 @@
-web: bin/hubot -a slack -n cpsbot
+worker: bin/hubot -a slack -n cpsbot
