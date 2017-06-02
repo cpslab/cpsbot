@@ -6,7 +6,7 @@
 module.exports = robot => {
 	robot.brain.autoSave = true;
 
-	robot.hear(/[Gg]ithub/, msg => {
+	robot.hear(/Github/, msg => {
 		msg.send(`ピピピー！GitHub 警察だ！`);
 	});
 
