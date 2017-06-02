@@ -27,7 +27,8 @@ module.exports = robot => {
 	};
 
 	robot.hear(/^goroku2 add (.+) (.+)$/i, msg => {
-		const [_, name, m] = msg.match;
+		const name = msg.match[1];
+		const m = msg.match[2];
 		const logger = loadLogger(name);
 		logger.push(m);
 		robot.brain.set(`goroku/${name}`, logger);
@@ -35,7 +36,8 @@ module.exports = robot => {
 	});
 
 	robot.hear(/^goroku2 rm (.+) (.+)$/, msg => {
-		const [_, name, m] = msg.match;
+		const name = msg.match[1];
+		const m = msg.match[2];
 		const logger = loadLogger(name);
 		const nextLogger = logger.filter(mes => mes !== m);
 		robot.brain.set(`goroku/${name}`, nextLogger);
