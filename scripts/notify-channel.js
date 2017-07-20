@@ -2,8 +2,13 @@
 //    notify create channel on Slack in #new_channels
 //
 module.exports = robot => {
-	console.log(robot.adapter.client);
-	robot.on('channelCreated', msg => {
-		robot.send({root: 'random'}, `新しいチャンネル #${msg.channel.id}が作られたよ！`);
+	if (!robot.adapter.client || !robot.adapter.client.on) {
+		return;
+	}
+	robot.adapter.client.on('raw_message', msg => {
+		if (msg.type === 'channel_created') {
+			robot.send({root: 'random'}, `新しいチャンネル #${msg.channel.id}が作られたよ！`);
+		}
 	});
 };
+
