@@ -13,4 +13,8 @@ module.exports = robot => {
 	robot.hear(/コリン|kotrin/i, msg => {
 		msg.send(`ピピピー！Kotlin 警察だ！`);
 	});
+
+	robot.hear(/武蔵屋/i, msg => {
+		msg.send(`ピピピー！武蔵家 警察だ！`);
+	});
 };
