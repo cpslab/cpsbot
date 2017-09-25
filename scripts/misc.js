@@ -8,4 +8,8 @@ module.exports = robot => {
 	robot.hear(/^最高かよ$/i, msg => {
 		msg.send('https://files.slack.com/files-pri/T02TM1NQZ-F2SB6JLN5/2958.jpg');
 	});
+	
+	robot.hear(//i, msg => {
+		msg.send(`:tohu_fire:`);
+	});
 };
