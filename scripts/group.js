@@ -8,6 +8,10 @@
 module.exports = robot => {
 	robot.brain.autoSave = true;
 
+	robot.hear(/@b3/i, msg => {
+		msg.send(`@masaki_h @izumi @ucchi @emot @yuto @adachy @hamajun @haruki @megumi @masashi @fj @ryo1 @yudai @kaito @mikaduki.2448`);
+	});
+
 	robot.hear(/@b4/i, msg => {
 		msg.send(`@atsuo @fjsmu @hashikazu @hayashi @jazzmas0531 @kodama_sakana @makky @sarise @seiyanakamura @wada`);
 	});
