@@ -1,7 +1,7 @@
 // Description:
 //   メンバーグループ呼び出し
 // Commands:
-//   @b3, @b4, @m1, @m2
+//   @b4, @m1, @m2, @m3, @m4
 
 'use strict';
 
