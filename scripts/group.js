@@ -23,6 +23,8 @@ const m4 = [
 	'shino', 'tk', 'tsuno', 'yone'
 ];
 
+const activeStudent = b4.concat(m1).concat(m2);
+
 const toMentionFormat = array => array.reduce(
 	(a, x) => `${a} @${x}`, ''
 ).trim();
@@ -48,5 +50,9 @@ module.exports = robot => {
 
 	robot.hear(/@m4/i, msg => {
 		msg.send(toMentionFormat(m4));
+	});
+
+	robot.hear(/@現役/i, msg => {
+		msg.send(toMentionFormat(activeStudent));
 	});
 };
