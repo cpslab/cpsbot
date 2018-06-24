@@ -6,9 +6,9 @@
 'use strict';
 
 const b4 = [
-	'Enomoto Yasunori', 'yuto_otuska', 'yusuke', 'rone', 'Megumi Kamimura',
-	'seiyanakamura', 'YukiAdachi', 'izumi keita', 'spawn', 'kotako',
-	'masashi nakazawa', 'hamajun', 'FJ', 'Kyota Uchida', 'Haruki Sakai',
+	'EnomoT', 'yuto_otuska', 'yusuke', 'rone', 'Megumi_Kamimura',
+	'seiyanakamura', 'YukiAdachi', 'izumiKeita', 'spawn', 'kotako',
+	'masashi_nakazawa', 'hamajun', 'FJ', 'Kyota_Uchida', 'Haruki_Sakai',
 	'umeboshi'
 ];
 
