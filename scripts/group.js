@@ -1,32 +1,35 @@
 // Description:
 //   メンバーグループ呼び出し
 // Commands:
-//   @b4, @m1, @m2, @m3, @m4
+//   @b4, @m1, @m2, @m3, @m4, @現役
+//
+// UserID は以下のURLからCSVをダウンロードすることで確認できる https://iwailab.slack.com/admin
+// または以下のAPIをたたく https://api.slack.com/methods/users.list/test
 
 'use strict';
 
 const b4 = [
-	'Enomoto Yasunori', 'yuto_otuska', 'yusuke', 'rone', 'Megumi Kamimura',
-	'seiyanakamura', 'YukiAdachi', 'izumi keita', 'spawn', 'kotako',
-	'masashi nakazawa', 'hamajun', 'FJ', 'Kyota Uchida', 'Haruki Sakai',
-	'umeboshi'
+	'U7H2PMXUG', 'U7HKLS07M', 'U6PRRGQNM', 'U7HMT51QS', 'U7HMTSGF4',
+	'U2YSAEPB8', 'U7HRXNX3P', 'U7JQD1U2K', 'U7H2N5W8Y', 'U7HPDU30U',
+	'U7HKLK1EF', 'U7HKLPV35', 'U7H6LB68H', 'U7JJFGB9U', 'U7H6LTT7T',
+	'U7LS7T6GN'
 ];
 
-const m1 = ['sarise', 'hayashi', 'fjsmu', 'makky', 'atsuo'];
+const m1 = ['U2LGU5T8U', 'U2LH9MMCH', 'U2LH8H9JB', 'U2LH9NX1D', 'U2LGYNFEC'];
 
-const m2 = ['adachi', 'kudo'];
+const m2 = ['U0C9WJNBB', 'U0C9Y8LD6'];
 
-const m3 = ['elzup', 'naoki', 'naoya', 'ninten', 'sukonbu'];
+const m3 = ['U03SLKJUG', 'U0B0NMR0F', 'U03SKD7DK', 'U03S83PKH', 'U04V44F9N'];
 
 const m4 = [
-	'kondo', 'kyosuke', 'misaki', 'mitsuha_suxee', 'shinji_cps',
-	'shino', 'tk', 'tsuno', 'yone'
+	'U0CG81S3D', 'U0BQTBZK5', 'U0CBHUZLG', 'U039Y8JPW', 'U0CDFKR6K',
+	'U02TM45R1', 'U0BQVNU3G', 'U0CDKC98E', 'U0C5RUZNK'
 ];
 
 const activeStudent = b4.concat(m1).concat(m2);
 
 const toMentionFormat = array => array.reduce(
-	(a, x) => `${a} @${x}`, ''
+	(a, x) => `${a} <@${x}>`, ''
 ).trim();
 
 module.exports = robot => {
