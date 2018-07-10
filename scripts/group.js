@@ -29,7 +29,7 @@ const m4 = [
 const activeStudent = b4.concat(m1).concat(m2);
 
 const toMentionFormat = array => array.reduce(
-	(a, x) => `${a} @${x}`, ''
+	(a, x) => `${a} <@${x}>`, ''
 ).trim();
 
 module.exports = robot => {
