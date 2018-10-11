@@ -1,6 +1,7 @@
 'use strict';
 const fs = require('fs');
 const request = require('request').defaults({encoding: null});
+const {WebClient} = require('@slack/client');
 const momentTz = require('moment-timezone');
 const sharp = require('sharp');
 
@@ -34,7 +35,7 @@ module.exports = robot => {
 
 		await sharp(amesh).extract(regionTokyo).toFile(result);
 
-		const data = {file: fs.createReadStream(result), channels: msg.message.item.channel};
-		robot.adapter.client.web.files.upload('amesh.png', data);
+		const data = {file: fs.createReadStream(result), channels: msg.message.channel_id};
+		new WebClient(robot.adapter.options.token).files.upload(data);
 	});
 };
