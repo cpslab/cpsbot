@@ -33,9 +33,9 @@ module.exports = robot => {
 				.overlayWith(overlay)
 				.toBuffer(), base);
 
-		await sharp(amesh).extract(regionTokyo).toFile(result);
-
-		const data = {file: fs.createReadStream(result), channels: msg.message.channel_id};
-		new WebClient(robot.adapter.options.token).files.upload(data);
+		sharp(amesh).extract(regionTokyo).toFile(result).then(() => {
+			const data = {file: fs.createReadStream(result), channels: msg.message.room};
+			new WebClient(robot.adapter.options.token).files.upload(data);
+		});
 	});
 };
