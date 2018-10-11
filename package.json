@@ -11,6 +11,7 @@
     "test": "xo"
   },
   "dependencies": {
+    "@slack/client": "^4.8.0",
     "adventar": "^0.2.1",
     "cheerio": "^1.0.0-rc.1",
     "eastasianwidth": "^0.1.1",
@@ -21,7 +22,10 @@
     "hubot-help": "^0.2.0",
     "hubot-redis-brain": "0.0.3",
     "hubot-scripts": "^2.17.2",
-    "hubot-slack": "^4.3.4"
+    "hubot-slack": "^4.3.4",
+    "moment-timezone": "^0.5.21",
+    "request": "^2.88.0",
+    "sharp": "^0.21.0"
   },
   "devDependencies": {
     "xo": "^0.18.2"
