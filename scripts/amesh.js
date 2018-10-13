@@ -1,3 +1,9 @@
+// Description:
+//   東京アメッシュ(http://tokyo-ame.jwa.or.jp/)から雨雲画像を取得して送る
+// Commands:
+//   amesh - amesh tokyo を実行
+//   amesh <region> - 指定された地域の雨雲画像を表示
+
 'use strict';
 const fs = require('fs');
 const request = require('request').defaults({encoding: null});
@@ -9,7 +15,7 @@ const map = 'image/map100.jpg';
 const msk = 'image/msk100.png';
 const result = 'image/amesh.png';
 
-const tokyo = {left: 1100, top: 580, width: 1280, height: 768};
+const tokyo = {left: 1150, top: 570, width: 1280, height: 768};
 const kanto = {left: 0, top: 0, width: 3080, height: 1920};
 const region = {tokyo, kanto};
 
