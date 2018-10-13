@@ -1,14 +1,17 @@
 'use strict';
 const fs = require('fs');
 const request = require('request').defaults({encoding: null});
-const {WebClient} = require('@slack/client');
+const {WebClient, RTMClient} = require('@slack/client');
 const momentTz = require('moment-timezone');
 const sharp = require('sharp');
 
 const map = 'image/map100.jpg';
 const msk = 'image/msk100.png';
 const result = 'image/amesh.png';
-const regionTokyo = {left: 1440, top: 680, width: 780, height: 480};
+
+const tokyo = {left: 1100, top: 580, width: 1280, height: 768};
+const kanto = {left: 0, top: 0, width: 3080, height: 1920};
+const region = {tokyo, kanto};
 
 const ameshFilename = () => {
 	const now = momentTz().tz('Asia/Tokyo').format('YYYYMMDDHHmm');
@@ -25,7 +28,12 @@ const fetchImage = url => new Promise((resolve, reject) => {
 });
 
 module.exports = robot => {
-	robot.hear(/amesh/, async msg => {
+	robot.hear(/amesh(.*)/, async msg => {
+		const rtm = new RTMClient(robot.adapter.options.token);
+		rtm.start();
+		rtm.sendTyping(msg.message.room);
+
+		const targetRegion = region[msg.match[1].trim()] || tokyo;
 		const base = await sharp(map).toBuffer();
 		const mesh = await fetchImage(`http://tokyo-ame.jwa.or.jp/mesh/100/${ameshFilename()}.gif`);
 		const amesh = await [mesh, msk].reduce(async (input, overlay) =>
@@ -33,9 +41,10 @@ module.exports = robot => {
 				.overlayWith(overlay)
 				.toBuffer(), base);
 
-		sharp(amesh).extract(regionTokyo).toFile(result).then(() => {
+		sharp(amesh).extract(targetRegion).toFile(result).then(() => {
 			const data = {file: fs.createReadStream(result), channels: msg.message.room};
 			new WebClient(robot.adapter.options.token).files.upload(data);
 		});
+		rtm.disconnect();
 	});
 };
