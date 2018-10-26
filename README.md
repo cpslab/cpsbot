@@ -12,8 +12,10 @@ masterにpushすればherokuへ自動デプロイされるます。
 ![aaa](https://raw.githubusercontent.com/wiki/cpslab/cpsbot/cpslab_system.png)
 
 Hubot というNode.js のボットフレームワークを使っている。
+
 Heroku の中にHubot サーバーと、Redisというインメモリ Key/Value DB を繋げている。 
 
 ## 管理者
 @akameco -> 現在 @macinjoke (牧野)
+
 開発に興味があったり、質問があったらお気軽にどうぞ。
