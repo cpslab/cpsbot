@@ -8,6 +8,12 @@
 
 'use strict';
 
+const b3 = [
+  "UA0BM185P", "UBDRCAW5A", "UDA9CPXL0", "UDB2E282U", "UDB7753B7",
+  "UDC01L52P", "UDC3YKWTB", "UDC4MJV89", "UDCBK7N1L", "UDCGHQ283",
+  "UDCJG2Y9H", "UDCR4C8LF", "UDD8RU8UW", "UDDP55JMD", "UDVJUV4UE",
+]
+
 const b4 = [
 	'U7H2PMXUG', 'U7HKLS07M', 'U6PRRGQNM', 'U7HMT51QS', 'U7HMTSGF4',
 	'U2YSAEPB8', 'U7HRXNX3P', 'U7JQD1U2K', 'U7H2N5W8Y', 'U7HPDU30U',
@@ -34,6 +40,10 @@ const toMentionFormat = array => array.reduce(
 
 module.exports = robot => {
 	robot.brain.autoSave = true;
+
+	robot.hear(/@b3/i, msg => {
+		msg.send(toMentionFormat(b3));
+	});
 
 	robot.hear(/@b4/i, msg => {
 		msg.send(toMentionFormat(b4));
