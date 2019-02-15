@@ -17,6 +17,7 @@ module.exports = robot => {
 		if (logger.indexOf(name) >= 0) {
 			return;
 		}
+
 		logger.push(name);
 		robot.brain.set('gorokuNames', logger);
 	};
@@ -58,7 +59,13 @@ module.exports = robot => {
 
 	robot.hear(/^goroku2 list-all$/i, msg => {
 		const names = robot.brain.get('gorokuNames') || [];
-		const text = names.map(name => loadLogger(name).map(v => `${name} ${v}`).join('\n')).join('\n');
+		const text = names
+			.map(name =>
+				loadLogger(name)
+					.map(v => `${name} ${v}`)
+					.join('\n')
+			)
+			.join('\n');
 		msg.send(text);
 	});
 };

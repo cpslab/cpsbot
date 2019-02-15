@@ -2,7 +2,7 @@
 //   魔法科
 'use strict';
 
-const url = require('url');
+const {URL} = require('url');
 const got = require('got');
 const cheerio = require('cheerio');
 
@@ -15,7 +15,7 @@ module.exports = robot => {
 			const imgs = $('li > img').map((v, el) => {
 				return $(el).attr('src');
 			});
-			msg.send(url.resolve(BASE, msg.random(imgs)));
+			msg.send(new URL(msg.random(imgs), BASE));
 		});
 	});
 };

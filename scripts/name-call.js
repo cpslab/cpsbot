@@ -16,6 +16,7 @@ module.exports = robot => {
 		if (msg.message.user.name === 'cpsbot') {
 			return;
 		}
+
 		const list = robot.brain.get(NAME) || [];
 		const {text} = msg.message;
 		for (const {id, name} of list) {

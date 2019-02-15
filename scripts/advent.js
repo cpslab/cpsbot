@@ -12,7 +12,7 @@ module.exports = robot => {
 	});
 
 	robot.hear(/今日のアドベントカレンダー/, msg => {
-		const d = (new Date()).getDate();
+		const d = new Date().getDate();
 		adventar(id).then(res => {
 			const {user, url} = res[d - 1];
 			const mes = url ? url : `まだ記事がないようです担当は${user}です`;
@@ -21,7 +21,7 @@ module.exports = robot => {
 	});
 
 	robot.hear(/昨日のアドベントカレンダー/, msg => {
-		const d = (new Date()).getDate();
+		const d = new Date().getDate();
 		adventar(id).then(res => {
 			const {url, user} = res[d - 2];
 			const mes = url ? url : `まだ記事がないようです担当は${user}です`;

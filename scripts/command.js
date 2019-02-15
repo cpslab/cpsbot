@@ -16,8 +16,9 @@ module.exports = robot => {
 		if (msg.message.user.name === 'cpsbot') {
 			return;
 		}
+
 		const obj = robot.brain.get(NAME) || {};
-		const text = msg.message.text;
+		const {text} = msg.message;
 		if (obj[text]) {
 			msg.send(obj[text]);
 		}
@@ -37,6 +38,7 @@ module.exports = robot => {
 		if (obj[command]) {
 			delete obj[command];
 		}
+
 		robot.brain.set('command', obj);
 	});
 

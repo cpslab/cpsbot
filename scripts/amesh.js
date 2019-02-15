@@ -20,18 +20,22 @@ const kanto = {left: 0, top: 0, width: 3080, height: 1920};
 const region = {tokyo, kanto};
 
 const ameshFilename = () => {
-	const now = momentTz().tz('Asia/Tokyo').format('YYYYMMDDHHmm');
+	const now = momentTz()
+		.tz('Asia/Tokyo')
+		.format('YYYYMMDDHHmm');
 	return now - (now % 5);
 };
 
-const fetchImage = url => new Promise((resolve, reject) => {
-	request(url, (err, res, body) => {
-		if (err || res.statusCode !== 200) {
-			reject(err);
-		}
-		resolve(body);
+const fetchImage = url =>
+	new Promise((resolve, reject) => {
+		request(url, (err, res, body) => {
+			if (err || res.statusCode !== 200) {
+				reject(err);
+			}
+
+			resolve(body);
+		});
 	});
-});
 
 module.exports = robot => {
 	robot.hear(/amesh(.*)/, async msg => {
@@ -41,16 +45,27 @@ module.exports = robot => {
 
 		const targetRegion = region[msg.match[1].trim()] || tokyo;
 		const base = await sharp(map).toBuffer();
-		const mesh = await fetchImage(`http://tokyo-ame.jwa.or.jp/mesh/100/${ameshFilename()}.gif`);
-		const amesh = await [mesh, msk].reduce(async (input, overlay) =>
-			sharp(await input)
-				.overlayWith(overlay)
-				.toBuffer(), base);
+		const mesh = await fetchImage(
+			`http://tokyo-ame.jwa.or.jp/mesh/100/${ameshFilename()}.gif`
+		);
+		const amesh = await [mesh, msk].reduce(
+			async (input, overlay) =>
+				sharp(await input)
+					.overlayWith(overlay)
+					.toBuffer(),
+			base
+		);
 
-		sharp(amesh).extract(targetRegion).toFile(result).then(() => {
-			const data = {file: fs.createReadStream(result), channels: msg.message.room};
-			new WebClient(robot.adapter.options.token).files.upload(data);
-		});
+		sharp(amesh)
+			.extract(targetRegion)
+			.toFile(result)
+			.then(() => {
+				const data = {
+					file: fs.createReadStream(result),
+					channels: msg.message.room
+				};
+				new WebClient(robot.adapter.options.token).files.upload(data);
+			});
 		rtm.disconnect();
 	});
 };
