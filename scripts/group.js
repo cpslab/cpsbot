@@ -32,7 +32,8 @@ const m4 = [
 	'U02TM45R1', 'U0BQVNU3G', 'U0CDKC98E', 'U0C5RUZNK'
 ];
 
-const activeStudent = b4.concat(m1).concat(m2);
+// 現役
+const activeStudent = b3.concat(b4).concat(m1).concat(m2);
 
 const toMentionFormat = array => array.reduce(
 	(a, x) => `${a} <@${x}>`, ''
