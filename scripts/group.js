@@ -8,7 +8,9 @@
 
 'use strict';
 
-const b3 = [
+// const b3 = [];
+
+const b4 = [
 	'UA0BM185P',
 	'UBDRCAW5A',
 	'UDA9CPXL0',
@@ -26,11 +28,29 @@ const b3 = [
 	'UDVJUV4UE'
 ];
 
-const b4 = [
-	'U7H2PMXUG',
+const m1 = ['U7HMT51QS', 'U7H2PMXUG'];
+
+const m2 = ['U2LGU5T8U', 'U2LH9MMCH', 'U2LH8H9JB', 'U2LH9NX1D', 'U2LGYNFEC'];
+
+const ob = [
+	'U0C9WJNBB',
+	'U0C9Y8LD6',
+	'U03SLKJUG',
+	'U0B0NMR0F',
+	'U03SKD7DK',
+	'U03S83PKH',
+	'U04V44F9N',
+	'U0CG81S3D',
+	'U0BQTBZK5',
+	'U0CBHUZLG',
+	'U039Y8JPW',
+	'U0CDFKR6K',
+	'U02TM45R1',
+	'U0BQVNU3G',
+	'U0CDKC98E',
+	'U0C5RUZNK',
 	'U7HKLS07M',
 	'U6PRRGQNM',
-	'U7HMT51QS',
 	'U7HMTSGF4',
 	'U2YSAEPB8',
 	'U7HRXNX3P',
@@ -45,24 +65,6 @@ const b4 = [
 	'U7LS7T6GN'
 ];
 
-const m1 = ['U2LGU5T8U', 'U2LH9MMCH', 'U2LH8H9JB', 'U2LH9NX1D', 'U2LGYNFEC'];
-
-const m2 = ['U0C9WJNBB', 'U0C9Y8LD6'];
-
-const m3 = ['U03SLKJUG', 'U0B0NMR0F', 'U03SKD7DK', 'U03S83PKH', 'U04V44F9N'];
-
-const m4 = [
-	'U0CG81S3D',
-	'U0BQTBZK5',
-	'U0CBHUZLG',
-	'U039Y8JPW',
-	'U0CDFKR6K',
-	'U02TM45R1',
-	'U0BQVNU3G',
-	'U0CDKC98E',
-	'U0C5RUZNK'
-];
-
 // 現役
 const activeStudent = b3
 	.concat(b4)
@@ -75,9 +77,9 @@ const toMentionFormat = array =>
 module.exports = robot => {
 	robot.brain.autoSave = true;
 
-	robot.hear(/@b3/i, msg => {
-		msg.send(toMentionFormat(b3));
-	});
+	// robot.hear(/@b3/i, msg => {
+	// 	msg.send(toMentionFormat(b3));
+	// });
 
 	robot.hear(/@b4/i, msg => {
 		msg.send(toMentionFormat(b4));
@@ -91,12 +93,8 @@ module.exports = robot => {
 		msg.send(toMentionFormat(m2));
 	});
 
-	robot.hear(/@m3/i, msg => {
-		msg.send(toMentionFormat(m3));
-	});
-
-	robot.hear(/@m4/i, msg => {
-		msg.send(toMentionFormat(m4));
+	robot.hear(/@ob/i, msg => {
+		msg.send(toMentionFormat(ob));
 	});
 
 	robot.hear(/@現役/i, msg => {
