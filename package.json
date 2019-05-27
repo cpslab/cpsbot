@@ -5,7 +5,7 @@
   "author": "akameco <akameco.t@gmail.com>",
   "description": "bot for cpslab",
   "engines": {
-    "node": ">=6"
+    "node": "8"
   },
   "scripts": {
     "test": "eslint scripts",
