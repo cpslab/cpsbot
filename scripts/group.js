@@ -8,7 +8,7 @@
 
 'use strict';
 
-// const b3 = [];
+const b3 = [];
 
 const b4 = [
 	'UA0BM185P',
@@ -77,8 +77,8 @@ const toMentionFormat = array =>
 module.exports = robot => {
 	robot.brain.autoSave = true;
 
-	// robot.hear(/@b3/i, msg => {
-	// 	msg.send(toMentionFormat(b3));
+  // robot.hear(/@b3/i, msg => {
+  //   msg.send(toMentionFormat(b3));
 	// });
 
 	robot.hear(/@b4/i, msg => {
