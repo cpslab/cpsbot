@@ -3,6 +3,7 @@
 ![cpsbotの様子](https://i.gyazo.com/a9198dd7b4b6e9c6e08c24a6e03b02fa.png)
 
 岩井研のSlackを便利にしてくれるBot。 @b4 @現役 などのメンション機能の他にも様々な機能があります。
+
 開発者用のドキュメント [docs/CONTRIBUTES.md](docs/CONTRIBUTE.md)
 
 ## システム構成
