@@ -11,10 +11,12 @@
 
 Hubot というNode.js のボットフレームワークを使っている。
 
-Heroku の中にHubot サーバーと、Redisというインメモリ Key/Value DB を繋げている。 
+Heroku の中にHubot サーバーと、Redisというインメモリ Key/Value DB を繋げている。
 
 ## 管理者
 @akameco -> 現在 @macinjoke (牧野)
 
 開発に興味があったり、質問があったらお気軽にどうぞ。
 Slack Channel: #dev_cpsbot #test
+
+- macinjoke
