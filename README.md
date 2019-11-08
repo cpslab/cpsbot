@@ -20,3 +20,4 @@ Heroku の中にHubot サーバーと、Redisというインメモリ Key/Value 
 Slack Channel: #dev_cpsbot #test
 
 -kai nakamura
+-shimada
