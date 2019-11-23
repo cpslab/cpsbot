@@ -18,5 +18,3 @@ Heroku の中にHubot サーバーと、Redisというインメモリ Key/Value 
 
 開発に興味があったり、質問があったらお気軽にどうぞ。
 Slack Channel: #dev_cpsbot #test
-
--kai nakamura
