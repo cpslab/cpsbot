@@ -5,10 +5,23 @@
 //
 // UserID は以下のURLからCSVをダウンロードすることで確認できる https://iwailab.slack.com/admin
 // または以下のAPIをたたく https://api.slack.com/methods/users.list/test
+// また、基本的に発表スケジュールの欄にSlack ID をいれて管理している。 2019発表スケジュール: https://docs.google.com/spreadsheets/d/1TzGpyJmyKFodQu4hc1-JLsa9CDlapN72GEDs8S1fpJo/edit#gid=0
 
 'use strict';
 
-const b3 = [];
+const b3 = [
+  'UP3D0AU8H',
+  'UPBMGFG0P',
+  'UNX2T1DCJ',
+  'UPC2DU67Q',
+  'UPC2DUD3Q',
+  'UP3CYQ741',
+  'UHSEF95UL',
+  'UP9RUE2RK',
+  'UP9RWQ6AU',
+  'UMAGTA799',
+  'UDC4MJV89',
+];
 
 const b4 = [
   'UA0BM185P',
@@ -77,9 +90,9 @@ const toMentionFormat = array =>
 module.exports = robot => {
   robot.brain.autoSave = true;
 
-  // robot.hear(/@b3/i, msg => {
-  //   msg.send(toMentionFormat(b3));
-  // });
+  robot.hear(/@b3/i, msg => {
+    msg.send(toMentionFormat(b3));
+  });
 
   robot.hear(/@b4/i, msg => {
     msg.send(toMentionFormat(b4));
