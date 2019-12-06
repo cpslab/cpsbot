@@ -1,7 +1,7 @@
 'use strict';
 const adventar = require('adventar');
 
-const id = '1536';
+const id = '3974';
 
 module.exports = robot => {
   robot.hear(/アドベントカレンダー list/, msg => {
