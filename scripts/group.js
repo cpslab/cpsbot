@@ -8,7 +8,26 @@
 // また、基本的に発表スケジュールの欄にSlack ID をいれて管理している。 2019発表スケジュール: https://docs.google.com/spreadsheets/d/1TzGpyJmyKFodQu4hc1-JLsa9CDlapN72GEDs8S1fpJo/edit#gid=0
 
 'use strict';
-const b3 = [];
+const b3 = [
+  'U01CNCZUEA3',
+  'U01D6SFJL5U',
+  'U01CWDBPP7Y',
+  'U01CYS664VD',
+  'U01DDQM976X',
+  'U01DDQMFHEF',
+  'U01CWQMC9DL',
+  'U01CNCZTDSB',
+  'U01DDQM8BPV',
+  'U01CD5J71QC',
+  'U01CD5YB5KN',
+  'U01DAFY0AUV',
+  'U01BRU2T35X',
+  'U01CNCZRQ31',
+  'UPV0U28KG',
+  'U01BUF4LH4L',
+  'U01D0D23EG1',
+  'U01DFPZNBK3'
+];
 
 const b4 = [
   'UP3D0AU8H',
@@ -90,11 +109,9 @@ const toMentionFormat = array =>
 module.exports = robot => {
   robot.brain.autoSave = true;
 
-  /* B3が配属されたらコメントアウトを外す
   robot.hear(/@b3/i, msg => {
     msg.send(toMentionFormat(b3));
   });
-  */
 
   robot.hear(/@b4/i, msg => {
     msg.send(toMentionFormat(b4));
