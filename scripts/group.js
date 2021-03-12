@@ -8,7 +8,9 @@
 // また、基本的に発表スケジュールの欄にSlack ID をいれて管理している。 2019発表スケジュール: https://docs.google.com/spreadsheets/d/1TzGpyJmyKFodQu4hc1-JLsa9CDlapN72GEDs8S1fpJo/edit#gid=0
 
 'use strict';
-const b3 = [
+const b3 = [];
+
+const b4 = [
   'U01DFPZNBK3',
   'U01BUF4LH4L',
   'U01CWQMC9DL',
@@ -17,30 +19,23 @@ const b3 = [
   'U01CWDBPP7Y',
   'U01BRU2T35X',
   'U01CNCZTX7Z',
-  'U01DDJJC874',
+  'U01CNCZTDSB',
   'U01D0D23EG1',
   'UPV0U28KG',
   'U01CNCZRQ31',
 ];
 
-const b4 = [
-  'UP3D0AU8H',
-  'UPBMGFG0P',
+const m1 = [
   'UNX2T1DCJ',
   'UPC2DU67Q',
   'UPC2DUD3Q',
   'UP3CYQ741',
   'UHSEF95UL',
   'UP9RUE2RK',
-  'UP9RWPYV6',
   'UP9RWQ6AU',
-  'UMAGTA799',
-  'UDC4MJV89',
 ];
 
-const m1 = ['UA0BM185P', 'UDCJG2Y9H', 'UDC01L52P', 'UDA9CPXL0', 'UDCR4C8LF'];
-
-const m2 = ['U7HMT51QS', 'U7H2PMXUG'];
+const m2 = ['UA0BM185P', 'UDCJG2Y9H', 'UDC01L52P', 'UDA9CPXL0', 'UDCR4C8LF'];
 
 const ob = [
   'U0C9WJNBB',
@@ -89,6 +84,13 @@ const ob = [
   'UDD8RU8UW',
   'UDDP55JMD',
   'UDVJUV4UE',
+  'U7HMT51QS',
+  'U7H2PMXUG',
+  'UPBMGFG0P',
+  'UP9RWPYV6',
+  'UP3D0AU8H',
+  'UMAGTA799',
+  'UDC4MJV89',
 ];
 
 // 現役
