@@ -26,7 +26,7 @@
     "hubot-slack": "^4.3.4",
     "moment-timezone": "^0.5.21",
     "request": "^2.88.0",
-    "sharp": "^0.21.0"
+    "sharp": "^0.30.5"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
