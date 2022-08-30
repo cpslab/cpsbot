@@ -24,7 +24,7 @@
     "hubot-redis-brain": "0.0.3",
     "hubot-scripts": "^2.17.2",
     "hubot-slack": "^4.3.4",
-    "moment-timezone": "^0.5.21",
+    "moment-timezone": "^0.5.35",
     "request": "^2.88.0",
     "sharp": "^0.21.0"
   },
