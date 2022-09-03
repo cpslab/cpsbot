@@ -9,10 +9,10 @@
 
 const NAME = 'name-call';
 
-module.exports = robot => {
+module.exports = (robot) => {
   robot.brain.autoSave = true;
 
-  robot.hear(/.+/, msg => {
+  robot.hear(/.+/, (msg) => {
     if (msg.message.user.name === 'cpsbot') {
       return;
     }
@@ -27,7 +27,7 @@ module.exports = robot => {
     }
   });
 
-  robot.hear(/^name-call add (.+?) (.+)/i, msg => {
+  robot.hear(/^name-call add (.+?) (.+)/i, (msg) => {
     const list = robot.brain.get(NAME) || [];
     const obj = {
       id: msg.match[1],
@@ -37,14 +37,14 @@ module.exports = robot => {
     robot.brain.set(NAME, list);
   });
 
-  robot.hear(/^name-call rm (.+)$/, msg => {
+  robot.hear(/^name-call rm (.+)$/, (msg) => {
     const list = robot.brain.get(NAME) || [];
-    const nextLogger = list.filter(mes => mes && mes.id !== msg.match[1]);
+    const nextLogger = list.filter((mes) => mes && mes.id !== msg.match[1]);
     robot.brain.set(NAME, nextLogger);
   });
 
-  robot.hear(/^name-call list$/i, msg => {
+  robot.hear(/^name-call list$/i, (msg) => {
     const list = robot.brain.get(NAME) || [];
-    msg.send(`${list.map(v => `${v.id}: ${v.name}`).join('\n')}`);
+    msg.send(`${list.map((v) => `${v.id}: ${v.name}`).join('\n')}`);
   });
 };

@@ -96,38 +96,35 @@ const ob = [
 ];
 
 // 現役
-const activeStudent = b3
-  .concat(b4)
-  .concat(m1)
-  .concat(m2);
+const activeStudent = b3.concat(b4).concat(m1).concat(m2);
 
-const toMentionFormat = array =>
+const toMentionFormat = (array) =>
   array.reduce((a, x) => `${a} <@${x}>`, '').trim();
 
-module.exports = robot => {
+module.exports = (robot) => {
   robot.brain.autoSave = true;
 
-  robot.hear(/@b3/i, msg => {
+  robot.hear(/@b3/i, (msg) => {
     msg.send(toMentionFormat(b3));
   });
 
-  robot.hear(/@b4/i, msg => {
+  robot.hear(/@b4/i, (msg) => {
     msg.send(toMentionFormat(b4));
   });
 
-  robot.hear(/@m1/i, msg => {
+  robot.hear(/@m1/i, (msg) => {
     msg.send(toMentionFormat(m1));
   });
 
-  robot.hear(/@m2/i, msg => {
+  robot.hear(/@m2/i, (msg) => {
     msg.send(toMentionFormat(m2));
   });
 
-  robot.hear(/@ob/i, msg => {
+  robot.hear(/@ob/i, (msg) => {
     msg.send(toMentionFormat(ob));
   });
 
-  robot.hear(/@現役/i, msg => {
+  robot.hear(/@現役/i, (msg) => {
     msg.send(toMentionFormat(activeStudent));
   });
 };

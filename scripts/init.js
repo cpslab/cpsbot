@@ -6,7 +6,7 @@ const herokuUrl = 'https://cpsbot-bot.herokuapp.com/';
 
 require('heroku-self-ping')(herokuUrl);
 
-module.exports = robot => {
+module.exports = (robot) => {
   const chanel = 'test';
   const msg = 'そして次の残留が始まるのです';
 

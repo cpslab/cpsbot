@@ -9,10 +9,10 @@
 
 const NAME = 'command';
 
-module.exports = robot => {
+module.exports = (robot) => {
   robot.brain.autoSave = true;
 
-  robot.hear(/.+/, msg => {
+  robot.hear(/.+/, (msg) => {
     if (msg.message.user.name === 'cpsbot') {
       return;
     }
@@ -24,7 +24,7 @@ module.exports = robot => {
     }
   });
 
-  robot.hear(/^(command|コマンド) add (.+?) (.+)/, msg => {
+  robot.hear(/^(command|コマンド) add (.+?) (.+)/, (msg) => {
     const obj = robot.brain.get(NAME) || {};
     const command = msg.match[2];
     const message = msg.match[3];
@@ -32,7 +32,7 @@ module.exports = robot => {
     robot.brain.set('command', obj);
   });
 
-  robot.hear(/^(command|コマンド) rm (.+?)/, msg => {
+  robot.hear(/^(command|コマンド) rm (.+?)/, (msg) => {
     const obj = robot.brain.get(NAME) || {};
     const command = msg.match[2];
     if (obj[command]) {
@@ -42,10 +42,10 @@ module.exports = robot => {
     robot.brain.set('command', obj);
   });
 
-  robot.hear(/^(command|コマンド) list$/i, msg => {
+  robot.hear(/^(command|コマンド) list$/i, (msg) => {
     const obj = robot.brain.get(NAME) || {};
     const str = Object.keys(obj)
-      .map(key => `${key} ${obj[key]}`)
+      .map((key) => `${key} ${obj[key]}`)
       .join('\n');
     msg.send(str);
   });

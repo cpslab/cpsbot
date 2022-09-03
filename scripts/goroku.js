@@ -8,10 +8,10 @@
 
 'use strict';
 
-module.exports = robot => {
+module.exports = (robot) => {
   robot.brain.autoSave = true;
 
-  robot.hear(/^goroku add (.+)/i, msg => {
+  robot.hear(/^goroku add (.+)/i, (msg) => {
     const logger = robot.brain.get('goroku') || [];
     const m = msg.match[1];
     logger.push(m);
@@ -19,20 +19,20 @@ module.exports = robot => {
     msg.send(`:iwi: ${m}`);
   });
 
-  robot.hear(/^goroku rm (.+)$/, msg => {
+  robot.hear(/^goroku rm (.+)$/, (msg) => {
     const logger = robot.brain.get('goroku') || [];
-    const nextLogger = logger.filter(mes => mes !== msg.match[1]);
+    const nextLogger = logger.filter((mes) => mes !== msg.match[1]);
     robot.brain.set('goroku', nextLogger);
   });
 
-  robot.hear(/^goroku random$/i, msg => {
+  robot.hear(/^goroku random$/i, (msg) => {
     const logger = robot.brain.get('goroku') || [];
     const mes = logger[Math.floor(Math.random() * logger.length)];
     msg.send(`:iwi: ${mes}`);
   });
 
-  robot.hear(/^goroku list$/i, msg => {
+  robot.hear(/^goroku list$/i, (msg) => {
     const logger = robot.brain.get('goroku') || [];
-    msg.send(`${logger.map(v => `:iwi: ${v}`).join('\n')}`);
+    msg.send(`${logger.map((v) => `:iwi: ${v}`).join('\n')}`);
   });
 };

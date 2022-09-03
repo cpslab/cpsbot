@@ -20,13 +20,11 @@ const kanto = { left: 0, top: 0, width: 3080, height: 1920 };
 const region = { tokyo, kanto };
 
 const ameshFilename = () => {
-  const now = momentTz()
-    .tz('Asia/Tokyo')
-    .format('YYYYMMDDHHmm');
+  const now = momentTz().tz('Asia/Tokyo').format('YYYYMMDDHHmm');
   return now - (now % 5);
 };
 
-const fetchImage = url =>
+const fetchImage = (url) =>
   new Promise((resolve, reject) => {
     request(url, (err, res, body) => {
       if (err || res.statusCode !== 200) {
@@ -37,8 +35,8 @@ const fetchImage = url =>
     });
   });
 
-module.exports = robot => {
-  robot.hear(/amesh(.*)/, async msg => {
+module.exports = (robot) => {
+  robot.hear(/amesh(.*)/, async (msg) => {
     const rtm = new RTMClient(robot.adapter.options.token);
     rtm.start();
     rtm.sendTyping(msg.message.room);

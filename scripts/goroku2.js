@@ -9,10 +9,10 @@
 
 'use strict';
 
-module.exports = robot => {
+module.exports = (robot) => {
   robot.brain.autoSave = true;
 
-  const addName = name => {
+  const addName = (name) => {
     const logger = robot.brain.get('gorokuNames') || [];
     if (logger.indexOf(name) >= 0) {
       return;
@@ -22,12 +22,12 @@ module.exports = robot => {
     robot.brain.set('gorokuNames', logger);
   };
 
-  const loadLogger = name => {
+  const loadLogger = (name) => {
     addName(name);
     return robot.brain.get(`goroku/${name}`) || [];
   };
 
-  robot.hear(/^goroku2 add (.+) (.+)$/i, msg => {
+  robot.hear(/^goroku2 add (.+) (.+)$/i, (msg) => {
     const name = msg.match[1];
     const m = msg.match[2];
     const logger = loadLogger(name);
@@ -36,33 +36,33 @@ module.exports = robot => {
     msg.send(`${name} ${m}`);
   });
 
-  robot.hear(/^goroku2 rm (.+) (.+)$/, msg => {
+  robot.hear(/^goroku2 rm (.+) (.+)$/, (msg) => {
     const name = msg.match[1];
     const m = msg.match[2];
     const logger = loadLogger(name);
-    const nextLogger = logger.filter(mes => mes !== m);
+    const nextLogger = logger.filter((mes) => mes !== m);
     robot.brain.set(`goroku/${name}`, nextLogger);
   });
 
-  robot.hear(/^goroku2 random (.+)$/i, msg => {
+  robot.hear(/^goroku2 random (.+)$/i, (msg) => {
     const name = msg.match[1];
     const logger = loadLogger(name);
     const mes = logger[Math.floor(Math.random() * logger.length)];
     msg.send(`${name} ${mes}`);
   });
 
-  robot.hear(/^goroku2 list (.+)$/i, msg => {
+  robot.hear(/^goroku2 list (.+)$/i, (msg) => {
     const name = msg.match[1];
     const logger = loadLogger(name);
-    msg.send(`${logger.map(v => `${name} ${v}`).join('\n')}`);
+    msg.send(`${logger.map((v) => `${name} ${v}`).join('\n')}`);
   });
 
-  robot.hear(/^goroku2 list-all$/i, msg => {
+  robot.hear(/^goroku2 list-all$/i, (msg) => {
     const names = robot.brain.get('gorokuNames') || [];
     const text = names
-      .map(name =>
+      .map((name) =>
         loadLogger(name)
-          .map(v => `${name} ${v}`)
+          .map((v) => `${name} ${v}`)
           .join('\n'),
       )
       .join('\n');
