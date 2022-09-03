@@ -5,37 +5,37 @@
   "author": "akameco <akameco.t@gmail.com>",
   "description": "bot for cpslab",
   "engines": {
-    "node": "8"
+    "node": "16"
   },
   "scripts": {
     "test": "eslint scripts",
     "lint": "eslint scripts --fix"
   },
   "dependencies": {
-    "@slack/client": "^4.8.0",
+    "@slack/client": "^5.0.2",
     "adventar": "^0.2.1",
     "cheerio": "^1.0.0-rc.1",
-    "eastasianwidth": "^0.1.1",
-    "got": "^7.0.0",
-    "heroku-self-ping": "^1.1.3",
+    "eastasianwidth": "^0.2.0",
+    "got": "^11",
+    "heroku-self-ping": "^2.0.1",
     "hubot": "^3.3.2",
-    "hubot-github-repo-event-notifier": "^1.7.0",
-    "hubot-help": "^0.2.0",
-    "hubot-redis-brain": "0.0.3",
+    "hubot-github-repo-event-notifier": "^1.8.1",
+    "hubot-help": "^1.0.1",
+    "hubot-redis-brain": "^1.0.0",
     "hubot-scripts": "^2.17.2",
-    "hubot-slack": "^4.3.4",
-    "moment-timezone": "^0.5.21",
-    "request": "^2.88.0",
-    "sharp": "^0.21.0"
+    "hubot-slack": "^4.10.0",
+    "moment-timezone": "^0.5.37",
+    "request": "^2.88.2",
+    "sharp": "^0.30.7"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^4.3.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "husky": "^1.3.1",
-    "lint-staged": "^8.1.4",
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "pre-commit": "^1.2.2",
-    "prettier": "^1.17.1"
+    "prettier": "^2.7.1"
   },
   "husky": {
     "hooks": {
