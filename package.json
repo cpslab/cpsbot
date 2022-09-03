@@ -17,7 +17,6 @@
     "cheerio": "^1.0.0-rc.1",
     "eastasianwidth": "^0.2.0",
     "got": "^11",
-    "heroku-self-ping": "^2.0.1",
     "hubot": "^3.3.2",
     "hubot-github-repo-event-notifier": "^1.8.1",
     "hubot-help": "^1.0.1",
